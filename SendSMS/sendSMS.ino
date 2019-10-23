@@ -22,22 +22,27 @@ void setup()
   mySerial.println("AT"); 
   updateSerial();
   
+  sendMessage("9959514051", "Hello");
+}
+
+void loop()
+{
+}
+
+void sendMessage(String num, String msg) {
   // Configuring TEXT mode
   mySerial.println("AT+CMGF=1");
   updateSerial();
   
   //change ZZ with country code and xxxxxxxxxxx with phone number to sms
-  mySerial.println("AT+CMGS=\"+639282524809\"");
+  mySerial.println("AT+CMGS=\"+63"+num+"\"");
   updateSerial();
   
   //text content
-  mySerial.print("[Insert text message here]"); 
+  mySerial.print(msg); 
   updateSerial();
   mySerial.write(26);
-}
-
-void loop()
-{
+  
 }
 
 void updateSerial()
