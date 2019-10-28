@@ -3,9 +3,15 @@
 //Create software serial object to communicate with A6
 // A6 PWR -> A6 VCC_IN
 // A6 GND -> Arduino GND
-// A6 Tx -> Arduino D03
-// A6 Rx -> Arduino D02
-SoftwareSerial mySerial(3, 2); 
+// A6 Tx -> Arduino D09
+// A6 Rx -> Arduino D08
+
+// 9282524809
+// 9235576953 
+String number = "9282524809";
+String message = "This is a test message at 10:29 am";
+
+SoftwareSerial mySerial(9, 8); 
 
 void setup()
 {
@@ -22,7 +28,7 @@ void setup()
   mySerial.println("AT"); 
   updateSerial();
   
-  sendMessage("9959514051", "Hello");
+  sendMessage(number, message);
 }
 
 void loop()
@@ -43,7 +49,7 @@ void sendMessage(String num, String msg) {
   updateSerial();
   mySerial.write(26);
   
-}
+}x
 
 void updateSerial()
 {
