@@ -1,10 +1,10 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(3, 2);
+SoftwareSerial mySerial(9, 8);
 
-int inl = 7;
+int inl = 17;
 void setup() {
-  pinMOde(inl, OUTPUT);
+  pinMode(inl, OUTPUT);
   digitalWrite(inl, HIGH);
 
   Serial.begin(9600);
@@ -19,14 +19,14 @@ void loop(){
   mySerial.println("AT+CMGF=1");
   
   updateSerial();
-  mySerial.println("AT+CMGS=\"+639656442739\"");
+  mySerial.println("AT+CMGS=\"+639959514051\"");
   
   updateSerial();
   mySerial.print("on");
   
   updateSerial();
   mySerial.write(26);
-  delay(60000);
+  delay(10000);
   
   digitalWrite(inl, LOW);
   
@@ -34,7 +34,7 @@ void loop(){
   mySerial.println("AT+CMGF=1");
   
   updateSerial();
-  mySerial.println("AT+CMGS=\"+639224012456\"");
+  mySerial.println("AT+CMGS=\"+639067317096\"");
   
   updateSerial();
   mySerial.print("off");
