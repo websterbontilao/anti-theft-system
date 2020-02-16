@@ -22,6 +22,10 @@ void setup() {
   // FALSE - Disabled
   sysEnabled = true;
 
+  // Set Relay VCC in Pin 16
+  pinMode(16, OUTPUT);
+  digitalWrite(16, HIGH);
+
   // Set Pin for Relay Module
   pinMode(17, OUTPUT);
   digitalWrite(17, LOW);
