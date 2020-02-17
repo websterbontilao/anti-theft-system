@@ -16,6 +16,14 @@ bool sysEnabled;
 
 void setup() {
   // put your setup code here, to run once:
+
+  // Turn ON GSM Module (START)
+  pinMode(9, OUTPUT);
+  digitalWrite(9, HIGH);
+  delay(1000);
+  digitalWrite(9, LOW);
+  delay(7000);
+  // Turn ON GSM Module (END)
   
   // State Modes
   // TRUE - Enabled
@@ -86,7 +94,7 @@ void loop() {
     }
 
     if (receivedData.equals(enableCode) && sysEnabled == false) {
-      digitalWrite(17, LOW);
+      digitalWrite(17, LOW); 
       toggleSystemState();
     }
 
