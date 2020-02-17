@@ -6,9 +6,9 @@ SoftwareSerial mySerial(10, 11);
 TinyGPS gps;
 
 String receivedData;
-String disableCode = "disabl";
-String enableCode = "enable";
-String getLocationCode = "locati";
+String disableCode = "okD756255otWJKewHxJd";
+String enableCode = "RNnFQuRlkaAU33lIS9RA";
+String getLocationCode = "Htcgk4UI6D3sX6BOXCSi";
 
 float lat, lon;
 
@@ -82,7 +82,7 @@ void loop() {
     
     // code number of characters (6)
     String senderNum = messageReceived.substring(9, 22);
-    receivedData = messageReceived.substring(51, 57);
+    receivedData = messageReceived.substring(51, 71);
     
     // Check if recieved code is Disabled code
     // And check if system state is Enabled
