@@ -111,7 +111,7 @@ void loop() {
 void getCurrentLocation() {
   bool _hasResult = false;
   // Set serial baud rate
-
+//serial1 built in tiny gps
   while(_hasResult == false){
     while(Serial1.available() && _hasResult == false) {
       if(gps.encode(Serial1.read()))
